@@ -1,5 +1,4 @@
 import net.minecraftforge.forge.tasks.*
-import net.minecraftforge.gradleutils.PomUtils
 
 plugins {
     id 'net.minecraftforge.licenser' version '1.0.1'
@@ -13,7 +12,7 @@ plugins {
     id 'org.barfuin.gradle.taskinfo' version '2.1.0'
 }
 
-Util.init() //Init all our extension methods!
+Util.init() // Init all our extension methods!
 
 ext {
     GIT_INFO = gradleutils.gitInfo
@@ -45,7 +44,7 @@ project(':mcp') {
 }
 
 if (System.env.TEAMCITY_VERSION) {
-    //Only setup the CI environment if and only if the environment variables are set.
+    // Only setup the CI environment if and only if the environment variables are set.
     tasks.named('configureTeamCity').configure {
         doLast {
             println "##teamcity[buildNumber '${project(':forge').version}']"
